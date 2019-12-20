@@ -1,0 +1,34 @@
+{
+	"manifest_version": 2,
+	"name": "sougou_wechat_creeper",
+	"version": "1.0",
+	"description": "基于谷歌拓展的搜狗微信公众号文章爬虫",
+	"author": "zhangweisong",
+	"icons":
+	{
+		"48": "icon.png",
+		"128": "icon.png"
+	},
+	"background":
+	{
+		"scripts": ["js/background.js"]
+	},
+	"browser_action": 
+	{
+		"default_icon": "icon.png",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": 
+	[
+		{
+			"matches": ["https://weixin.sogou.com/*", "https://mp.weixin.qq.com/*"],
+			"js": ["js/content-script.js"]
+		}
+	],
+	"permissions":
+	[
+		"storage",
+		"tabs"
+	],
+	"web_accessible_resources": []
+}
