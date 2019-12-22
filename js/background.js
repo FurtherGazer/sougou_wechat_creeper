@@ -54,11 +54,11 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
             现有总数据行数为：${detail_list.size}
         `);
 
-        // 然后关闭当前 tab 页
+        // 然后 1s 后关闭当前 tab 页
         if(request.if_sougou){
             setTimeout(function(){
                 chrome.tabs.remove(sender.tab.id)
-            },2000)
+            },1000)
         }        
     }
 

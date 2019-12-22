@@ -44,7 +44,7 @@ function _getStatusFromBackground(){
 }
 
 // 初始化
-if(document.location.hostname=='weixin.sogou.com'){
+if(document.location.href.match(/weixin.sogou.com\/weixin/)){
     _addLoadEvent( // 延迟1s
         setTimeout(() => {
             _getStatusFromBackground()
